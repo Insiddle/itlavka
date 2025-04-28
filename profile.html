@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styleprofile.css">
+    <title>Профиль</title>
+</head>
+<body>
+
+    <div class="header-container">
+        <div class="sidebar">
+            <div class="logo"><img src="img/logo.png" class="logoimg"></div>
+        </div>
+    </div>
+    
+    <div class="profile-container">
+        <h1>Профиль пользователя</h1>
+        
+        <div id="authMessage" style="display: none;">
+            <p>Вы не авторизованы!</p>
+            <button onclick="window.location.href='index.html'">Перейти на страницу входа</button>
+        </div>
+
+        <div id="profileContent" style="display: none;">
+            <form id="profileForm">
+                <div class="form-group">
+                    <label for="first_name">Имя</label>
+                    <input type="text" id="first_name" name="first_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="last_name">Фамилия</label>
+                    <input type="text" id="last_name" name="last_name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Почтовый ящик</label>
+                    <input type="email" id="email" name="email" required readonly class="readonly">
+                </div>
+
+                <div class="form-group">
+                    <label for="phone_number">Телефон</label>
+                    <input type="tel" id="phone_number" name="phone_number" oninput="formatPhone(this)" placeholder="+7(___)___-__-__" maxlength="18">
+                </div>
+
+                <div class="address-section">
+                    <h3>Адрес</h3>
+                    
+                    <div class="form-group">
+                        <label for="city">Город</label>
+                        <input type="text" id="city" name="city">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="street">Улица</label>
+                        <input type="text" id="street" name="street">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="house_number">Дом</label>
+                        <input type="text" id="house_number" name="house_number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appartment_number">Квартира</label>
+                        <input type="text" id="appartment_number" name="appartment_number">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="postal_code">Индекс</label>
+                        <input type="text" id="postal_code" name="postal_code">
+                    </div>
+                </div>
+
+                <button type="submit">Сохранить изменения</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="scriptprofile.js"></script>
+</body>
+</html>
