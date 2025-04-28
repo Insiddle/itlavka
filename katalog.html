@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title> </title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="header-container">
+        <div class="sidebar">
+            <div class="logo"><img src="img/logo.png" class="logoimg"></div>
+            <div class="search-bar">
+                <input type="text" placeholder="Поиск по сайту">
+                <span class="icon-search"><img src="icons/search.png" class="poisk"></span>
+            </div>
+        </div>
+        <div class="header">
+            <div class="user-info" id="user-info">
+                <div id="username" class="username">Профиль</div>
+                <img class="avatar" src="icons/user.png" alt="User Avatar">
+                <div class="profile-menu">
+                    <div class="menu-item profile" id="profile">Профиль</div>
+                    <div class="menu-item cart" id="cart">Корзина</div>
+                    <div class="menu-item orders" id="orders">Заказы</div>
+                    <div class="menu-item exit" id="logoutButton">Выход</div>
+                </div>
+            </div>
+        </div>
+
+        <button id="registerButton" class="register-button">Регистрация</button>
+    </div>
+
+    <div class="main-container">
+        <div class="sidebar-menu">
+            <div class="menu-item" data-target="keyboards">
+                <img class="icon" src="icons/keyboard.png" alt="">Клавиатуры
+            </div>
+            <div class="menu-item" data-target="mouse">
+                <img class="icon" src="icons/mouse.png" alt="">Мыши
+            </div>
+            <div class="menu-item" data-target="headphones">
+                <img class="icon" src="icons/headphones.png" alt="">Наушники
+            </div>
+            <div class="menu-item" data-target="microphones">
+                <img class="icon" src="icons/microphone.png" alt="">Микрофоны
+            </div>
+            <div class="menu-item" data-target="monitors">
+                <img class="icon" src="icons/screen.png" alt="">Мониторы
+            </div>
+            <div class="menu-item" data-target="controllers">
+                <img class="icon" src="icons/console-controller.png" alt="">Игровые контроллеры
+            </div>
+            <div class="menu-item" data-target="webcams">
+                <img class="icon" src="icons/webcam.png" alt="">Веб-камеры
+            </div>
+            <div class="menu-item" data-target="accessories">
+                <img class="icon" src="icons/menu-dots.png" alt="">Аксессуары
+            </div>
+            <div class="menu-item" data-target="software">
+                <img class="icon" src="icons/display-chart-up.png" alt="">Программное обеспечение
+            </div>
+        </div>
+
+        <div class="quick-tasks">
+            <div id="category-buttons-container" class="category-buttons"></div>
+        
+            <div class="content-container" id="keyboards">
+                <div class="product-grid">
+                    <div class="product-item" data-category="Игровые" data-product-type="keyboards">
+                        <img src="img/klava3.jpg" alt="Клавиатура 1" class="product-image-keyboards">
+                        <div class="product-info">
+                            <p class="product-text">Клавиатура A4TECH Bloody B140N</p>
+                            <p class="product-price">
+                                <span class="old-price">3 000р.</span>
+                                <span class="new-price">2 700р.</span>
+                            </p>
+                            <span class="discount-badge">-10%</span>
+                            <button class="product-button" data-product-id="1">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="Механические" data-product-type="keyboards">
+                        <img src="img/klava2.jpg" alt="Клавиатура GMNG GG-KB783XPW" class="product-image-keyboards">
+                        <div class="product-info">
+                            <p class="product-text">Клавиатура GMNG GG-KB783XPW</p>
+                            <p class="product-price">
+                                <span class="old-price">5 000р.</span>
+                                <span class="new-price">4 250р.</span>
+                            </p>
+                            <span class="discount-badge">-15%</span>
+                            <button class="product-button" data-product-id="2">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="Беспроводные" data-product-type="keyboards">
+                        <img src="img/klava1.jpg" alt="Клавиатура 3" class="product-image-keyboards">
+                        <div class="product-info">
+                        <p class="product-text">Клавиатура Acer OKR300</p>
+                        <p class="product-text1">2 400р.</p>
+                        <button class="product-button" data-product-id="3">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="content-container" id="mouse">
+                <div class="product-grid">
+                    <div class="product-item" data-category="Игровые" data-product-type="mouse">
+                        <img src="img/mouse1.jpg" alt="Мышь 1" class="product-image-mouse">
+                        <div class="product-info">
+                        <p class="product-text">Мышь Logitech G502 Hero</p>
+                        <p class="product-text1">4 500р.</p>
+                        <button class="product-button" data-product-id="4">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="Игровые" data-product-type="mouse">
+                        <img src="img/mouse2.jpg" alt="Мышь 2" class="product-image-mouse">
+                        <div class="product-info">
+                        <p class="product-text">Мышь Razer DeathAdder V2</p>
+                        <p class="product-text1">5 200р.</p>
+                        <button class="product-button" data-product-id="5">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="Беспроводные" data-product-type="mouse">
+                        <img src="img/mouse3.jpg" alt="Мышь 3" class="product-image-mouse">
+                        <div class="product-info">
+                        <p class="product-text">Мышь A4Tech Bloody V8</p>
+                        <p class="product-text1">1 800р.</p>
+                        <button class="product-button" data-product-id="6">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="content-container" id="headphones">
+                <div class="product-grid">
+                    <div class="product-item" data-category="Накладные" data-product-type="headphones">
+                        <img src="img/headphones1.jpg" alt="Наушники Sony WH-1000XM4" class="product-image-headphones">
+                        <div class="product-info">
+                            <p class="product-text">Наушники Sony WH-1000XM4</p>
+                            <p class="product-price">
+                                <span class="old-price">24 990р.</span>
+                                <span class="new-price">22 490р.</span>
+                            </p>
+                            <span class="discount-badge">-10%</span>
+                            <button class="product-button" data-product-id="7">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="Вкладные" data-product-type="headphones">
+                        <img src="img/headphones2.jpg" alt="Наушники 2" class="product-image-headphones">
+                        <div class="product-info">
+                        <p class="product-text">Наушники HyperX Cloud II</p>
+                        <p class="product-text1">9 990р.</p>
+                        <button class="product-button" data-product-id="8">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="Беспроводные" data-product-type="headphones">
+                        <img src="img/headphones3.jpg" alt="Наушники 3" class="product-image-headphones">
+                        <div class="product-info">
+                        <p class="product-text">Наушники Apple Airpods Pro</p>
+                        <p class="product-text1">25 550р.</p>
+                        <button class="product-button" data-product-id="9">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="content-container" id="microphones">
+                <div class="product-grid">
+                    <div class="product-item" data-category="Компьютерные, Беспроводные" data-product-type="microphones">
+                        <img src="img/mic1.jpg" alt="Микрофон 1" class="product-image-microphones">
+                        <div class="product-info">
+                        <p class="product-text">Микрофон HyperX QuadCast</p>
+                        <p class="product-text1">12 990р.</p>
+                        <button class="product-button" data-product-id="10">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="Компьютерные, Студийные" data-product-type="microphones">
+                        <img src="img/mic2.jpg" alt="Микрофон 2" class="product-image-microphones">
+                        <div class="product-info">
+                        <p class="product-text">Микрофон Rode NT-USB</p>
+                        <p class="product-text1">15 490р.</p>
+                        <button class="product-button" data-product-id="11">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="Компьютерные, Беспроводные" data-product-type="microphones">
+                        <img src="img/mic3.jpg" alt="Микрофон 3" class="product-image-microphones">
+                        <div class="product-info">
+                        <p class="product-text">Микрофон Blue Yeti</p>
+                        <p class="product-text1">14 990р.</p>
+                        <button class="product-button" data-product-id="12">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        
+            <div class="content-container" id="monitors">
+                <div class="product-grid">
+                    <div class="product-item" data-category="Игровые" data-product-type="monitors">
+                        <img src="img/monitor1.jpg" alt="Монитор 1" class="product-image-monitors">
+                        <div class="product-info">
+                        <p class="product-text">Монитор ASUS TUF Gaming VG249Q</p>
+                        <p class="product-text1">21 990р.</p>
+                        <button class="product-button" data-product-id="13">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="IPS" data-product-type="monitors">
+                        <img src="img/monitor2.jpg" alt="Монитор 2" class="product-image-monitors">
+                        <div class="product-info">
+                        <p class="product-text">Монитор Samsung Odyssey G5</p>
+                        <p class="product-text1">29 990р.</p>
+                        <button class="product-button" data-product-id="14">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="VA" data-product-type="monitors">
+                        <img src="img/monitor3.jpg" alt="Монитор 3" class="product-image-monitors">
+                        <div class="product-info">
+                        <p class="product-text">Монитор LG 27GL850-B</p>
+                        <p class="product-text1">34 990р.</p>
+                        <button class="product-button" data-product-id="15">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="content-container" id="controllers">
+                <div class="product-grid">
+                    <div class="product-item" data-category="Xbox" data-product-type="controllers">
+                        <img src="img/controller1.jpg" alt="Контроллер 1" class="product-image-controllers">
+                        <div class="product-info">
+                        <p class="product-text">Геймпад Xbox Wireless Controller</p>
+                        <p class="product-text1">5 990р.</p>
+                        <button class="product-button" data-product-id="16">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="PlayStation" data-product-type="controllers">
+                        <img src="img/controller2.jpg" alt="Контроллер 2" class="product-image-controllers">
+                        <div class="product-info">
+                        <p class="product-text">Геймпад DualSense PlayStation 5</p>
+                        <p class="product-text1">7 490р.</p>
+                        <button class="product-button" data-product-id="17">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="Nintendo" data-product-type="controllers">
+                        <img src="img/controller3.jpg" alt="Контроллер 3" class="product-image-controllers">
+                        <div class="product-info">
+                        <p class="product-text">Геймпад Nintendo Switch Pro</p>
+                        <p class="product-text1">6 490р.</p>
+                        <button class="product-button" data-product-id="18">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="content-container" id="webcams">
+                <div class="product-grid">
+                    <div class="product-item" data-category="Full HD" data-product-type="webcams">
+                        <img src="img/webcam1.jpg" alt="Веб-камера 1" class="product-image-webcams">
+                        <div class="product-info">
+                        <p class="product-text">Веб-камера Logitech C920</p>
+                        <p class="product-text1">8 990р.</p>
+                        <button class="product-button" data-product-id="19">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="HD" data-product-type="webcams">
+                        <img src="img/webcam2.jpg" alt="Веб-камера 2" class="product-image-webcams">
+                        <div class="product-info">
+                        <p class="product-text">Веб-камера Razer Kiyo</p>
+                        <p class="product-text1">9 990р.</p>
+                        <button class="product-button" data-product-id="20">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="4K" data-product-type="webcams">
+                        <img src="img/webcam3.jpg" alt="Веб-камера 3" class="product-image-webcams">
+                        <div class="product-info">
+                        <p class="product-text">Веб-камера A4Tech PK-910H</p>
+                        <p class="product-text1">3 990р.</p>
+                        <button class="product-button" data-product-id="21">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="content-container" id="accessories">
+                <div class="product-grid">
+                    <div class="product-item" data-category="Коврики" data-product-type="accessories">
+                        <img src="img/accessory1.jpg" alt="Коврик для мыши Razer Goliathus" class="product-image-accessories">
+                        <div class="product-info">
+                            <p class="product-text">Коврик для мыши Razer Goliathus</p>
+                            <p class="product-price">
+                                <span class="old-price">1 990р.</span>
+                                <span class="new-price">1 790р.</span>
+                            </p>
+                            <span class="discount-badge">-10%</span>
+                            <button class="product-button" data-product-id="22">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="Подставки" data-product-type="accessories">
+                        <img src="img/accessory2.jpg" alt="Подставка для наушников ARDOR Gaming" class="product-image-accessories">
+                        <div class="product-info">
+                            <p class="product-text">Подставка для наушников ARDOR Gaming</p>
+                            <p class="product-price">
+                                <span class="old-price">2 490р.</span>
+                                <span class="new-price">2 240р.</span>
+                            </p>
+                            <span class="discount-badge">-10%</span>
+                            <button class="product-button" data-product-id="23">В корзину</button>
+                        </div>
+                    </div>
+                    <div class="product-item" data-category="Аксессуары" data-product-type="accessories">
+                        <img src="img/accessory3.jpg" alt="Аксессуар 3" class="product-image-accessories">
+                        <div class="product-info">
+                        <p class="product-text">Кабель USB-C 2м</p>
+                        <p class="product-text1">990р.</p>
+                        <button class="product-button" data-product-id="24">В корзину</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="content-container" id="software">
+                <div class="product-grid">
+                    <div class="product-item"  onclick="window.open('https://www.razer.ru/product/software/synapse-3?srsltid=AfmBOooOXEUv2qT8XqST4ZcAQ_fBASgEMxyIKOT_sbYE5-awciD3orNJ', '_blank')">
+                        <img src="img/software1.jpg" alt="ПО 1" class="product-image-software">
+                        <p class="product-text">Razer Synapse 3</p>
+                    </div>
+                    <div class="product-item" onclick="window.open('https://www.logitechg.com/en-us/innovation/g-hub.html', '_blank')">
+                        <img src="img/software2.jpg" alt="ПО 2" class="product-image-software">
+                        <p class="product-text">Logitech G HUB</p>
+                    </div>
+                    <div class="product-item" onclick="window.open('https://www.corsair.com/ru/ru/s/icue?srsltid=AfmBOoo57St1n3DIAGu7bELle7m0xhcIyOaDhCi8VAgaYWtcUufUsyN2', '_blank')">
+                        <img src="img/software3.jpg" alt="ПО 3" class="product-image-software">
+                        <p class="product-text">iCUE от Corsair</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="successMessage">
+            Вы успешно зарегистрировались!
+        </div>
+
+    <!-- Окно регистрации -->
+    <div id="registrationModal" class="modalreg">
+        <div class="modal-content">
+            <span class="close-registration">&times;</span>
+            <h2>Регистрация</h2>
+            <form id="registrationForm">
+
+                <label for="first_name">Имя</label>
+                <input type="textt" id="first_name" name="first_name" placeholder="Введите имя" required>
+    
+                <label for="last_name">Фамилия</label>
+                <input type="textt" id="last_name" name="last_name" placeholder="Введите фамилию" required>
+    
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Введите Ваш почтовый ящик" required>
+    
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" placeholder="Придумайте пароль" required>
+    
+                <label for="phone_number">Телефон</label>
+                <input type="tel" id="phone_number" name="phone_number" oninput="formatPhone(this)" placeholder="+7(___)___-__-__" maxlength="18" required>
+    
+                <label for="city">Город</label>
+                <input type="textt" id="city" name="city" placeholder="Введите город">
+                            
+                <label for="street">Улица</label>
+                <input type="textt" id="street" name="street" placeholder="Введите улицу">
+
+                <label for="house_number">Номер дома</label>
+                <input type="textt" id="house_number" name="house_number" placeholder="Введите номер дома">
+
+                <label for="apartment_number">Номер квартиры</label>
+                <input type="textt" id="apartment_number" name="apartment_number" placeholder="Введите номер квартиры">
+                            
+                <label for="postal_code">Почтовый индекс</label>
+                <input type="textt" id="postal_code" name="postal_code" placeholder="Введите почтовый индекс">
+
+                <button type="submit" class="regbutton">Зарегистрироваться</button>
+            </form>
+            <div class="toggle-form">
+                <p>Уже есть аккаунт? <a id="showLogin">Войти</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modallog">
+        <div class="modal-content">
+            <span class="close-login">&times;</span>
+            <h2>Вход</h2>
+            <form id="loginForm">
+                <label for="login_email">Email</label>
+                <input type="email" id="login_email" name="email" required>
+    
+                <label for="login_password">Пароль</label>
+                <input type="password" id="login_password" name="password" required>
+    
+                <button type="submit" class="loginbutton">Войти</button>
+            </form>
+            <div class="toggle-form">
+                <p>Нет аккаунта? <a id="showRegister">Зарегистрироваться</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    <footer class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section logo-section">
+                <img src="img/logo.png" alt="Логотип" class="footer-logo">
+                <p>© 2025 Компания "ITЛавка".</p>
+                <p>Все права защищены.</p>
+            </div>
+            <div class="footer-section contact-section">
+                <h3>Контакты</h3>
+                <p>____________________________</p><br>
+                <p>Телефон: +7 (928) 307-54-94</p>
+                <p>Email: ...@mail.com</p>
+                <p>Адрес: г. Ставрополь</p>
+            </div>
+            <div class="footer-section owners-section">
+                <h3>О владельцах</h3>
+                <p>____________________________</p><br>
+                <p>Сайт разработан командой:</p>
+                <ul>
+                    <li>...</li>
+                    <li>...</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scriptkatalog.js"></script>
+</body> 
+</html>

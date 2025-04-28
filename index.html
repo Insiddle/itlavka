@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>ITLavka</title>
+</head>
+<body>
+<div class="wrapper">
+    <div class="header-container">
+        <div class="sidebar">
+            <div class="logo"><img src="img/logo.png" class="logoimg"></div>
+        </div>
+        <div class="header">
+            <div class="user-info" id="user-info">
+                <div id="username" class="username">Профиль</div>
+                <img class="avatar" src="icons/user.png" alt="User Avatar">
+                <div class="profile-menu">
+                    <div class="menu-item profile" id="profile">Профиль</div>
+                    <div class="menu-item cart" id="cart">Корзина</div>
+                    <div class="menu-item orders">Заказы</div>
+                    <div class="menu-item exit" id="logoutButton">Выход</div>
+                </div>
+            </div>
+        </div>
+        <button id="registerButton" class="register-button">Регистрация</button>
+    </div>
+
+
+    <div class="banner-and-brands">
+        <div class="banner-content">
+            <div class="banner-slide active">
+                <img src="img/banner.jpg" id="Logitech G502">
+            </div>
+            <div class="banner-slide">
+                <img src="img/banner1.png" id="Apple Airpods Pro">
+            </div>
+            <div class="banner-slide">
+                <img src="img/banner2.jpg" id="Razer DeathAdder V2">
+            </div>
+
+            <button class="arrow prev">&#10094;</button>
+            <button class="arrow next">&#10095;</button>
+
+
+            <div class="carousel-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+        <div class="brands">
+            <img src="img/razer.png" alt="Razer">
+            <img src="img/sony.png" alt="Sony">
+            <img src="img/acer.png" alt="Acer">
+            <img src="img/hyperx.jpg" alt="HyperX">
+            <img src="img/apple.png" alt="Apple">
+            <img src="img/logitech.png" alt="Logitech">
+        </div>
+    </div>
+
+    <section class="cards">
+        <div class="card" id="katalog-tovarov">
+            <img src="img/katalog.png" alt="Иконка" class="card-icon">
+            <span class="card-content">Каталог товаров</span>
+        </div>
+        <div class="card" id="akcii">
+            <img src="img/megafon.png" alt="Иконка" class="card-icon">
+            <span class="card-content">Товары по акции</span>
+        </div>
+        <div class="card" id="vhod">
+            <img src="img/cab.webp" alt="Иконка" class="card-icon">
+            <span class="card-content-vhod">Вход в аккаунт</span>
+            <div class="buttons">
+                <button class="btnenter" id="btnenter">Войти</button>
+                <button class="btnorder" id="btnorder">Ваши заказы</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="subscription">
+        <div class="subscription-content">
+            <h2>Подпишитесь на нашу рассылку</h2>
+            <form id="subscriptionForm">
+                <label for="name">Имя</label>
+                <input type="text" id="name" name="user_name" placeholder="Введите ваше имя" required>
+                <label for="subscremail">Ваш почтовый ящик</label>
+                <input type="email" id="subscremail" name="subscremail" placeholder="Введите ваш почтовый ящик" required>
+                <button type="subscrsubmit">Подписаться</button>
+            </form>
+            <div id="subscriptionMessage" class="subscription-message"></div>
+        </div>
+        <div class="subscription-image">
+            <img src="img/fon.jpg">
+        </div>
+    </section>
+
+    <div class="successMessage">
+        Вы успешно подписались!
+    </div>
+</div>
+
+    <div id="registrationModal" class="modalreg">
+        <div class="modal-content">
+            <span class="close-registration">&times;</span>
+            <h2>Регистрация</h2>
+            <form id="registrationForm">
+                <label for="first_name">Имя</label>
+                <input type="textt" id="first_name" name="first_name" placeholder="Введите имя" required>
+    
+                <label for="last_name">Фамилия</label>
+                <input type="textt" id="last_name" name="last_name" placeholder="Введите фамилию" required>
+    
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Введите Ваш почтовый ящик" required>
+    
+                <label for="password">Пароль</label>
+                <input type="password" id="password" name="password" placeholder="Придумайте пароль" required>
+    
+                <label for="phone_number">Телефон</label>
+                <input type="tel" id="phone_number" name="phone_number" oninput="formatPhone(this)" placeholder="+7(___)___-__-__" maxlength="18" required>
+    
+                <label for="city">Город</label>
+                <input type="textt" id="city" name="city" placeholder="Введите город">
+                            
+                <label for="street">Улица</label>
+                <input type="textt" id="street" name="street" placeholder="Введите улицу">
+
+                <label for="house_number">Номер дома</label>
+                <input type="textt" id="house_number" name="house_number" placeholder="Введите номер дома">
+
+                <label for="appartment_number">Номер квартиры</label>
+                <input type="textt" id="appartment_number" name="appartment_number" placeholder="Введите номер квартиры">
+                            
+                <label for="postal_code">Почтовый индекс</label>
+                <input type="textt" id="postal_code" name="postal_code" placeholder="Введите почтовый индекс">
+                  <button type="regsubmit" class="regbutton">Зарегистрироваться</button>
+            </form>
+            <div class="toggle-form">
+                <p>Уже есть аккаунт? <a id="showLogin">Войти</a></p>
+            </div>
+        </div>
+    </div>
+
+    <div id="loginModal" class="modallog">
+        <div class="modal-content">
+            <span class="close-login">&times;</span>
+            <h2>Вход</h2>
+            <form id="loginForm">
+                <label for="login_email">Email</label>
+                <input type="email" id="login_email" name="email" required>
+    
+                <label for="login_password">Пароль</label>
+                <input type="password" id="login_password" name="password" required>
+    
+                <button type="logsubmit" class="loginbutton">Войти</button>
+            </form>
+            <div class="toggle-form">
+                <p>Нет аккаунта? <a id="showRegister">Зарегистрироваться</a></p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer class="footer-container">
+        <div class="footer-content">
+            <div class="footer-section logo-section">
+                <img src="img/logo.png" alt="Логотип" class="footer-logo">
+                <p>© 2025 Компания "ITЛавка".</p>
+                <p>Все права защищены.</p>
+            </div>
+            <div class="footer-section contact-section">
+                <h3>Контакты</h3>
+                <p>____________________________</p><br>
+                <p>Телефон: +7 (928) 307-54-94</p>
+                <p>Email: ...@mail.com</p>
+                <p>Адрес: г. Ставрополь</p>
+            </div>
+            <div class="footer-section owners-section">
+                <h3>О владельцах</h3>
+                <p>____________________________</p><br>
+                <p>Сайт разработан командой:</p>
+                <ul>
+                    <li>...</li>
+                    <li>...</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>emailjs.init('Nndpgy7Nt8XrwKjbK')</script>
+</body> 
+</html>
