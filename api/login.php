@@ -18,7 +18,7 @@ $sessionId = session_id();
 
 header("Set-Cookie: PHPSESSID=$sessionId; Path=/; HttpOnly; SameSite=Lax; Partitioned");
 
-header("Access-Control-Allow-Origin: http://localhost");
+header("Access-Control-Allow-Origin: http://itlavka.free.nf");
 header("Access-Control-Allow-Credentials: true");
 header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 header("Access-Control-Allow-Headers: Content-Type");
