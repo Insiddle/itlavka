@@ -221,7 +221,7 @@ document.getElementById('registrationForm').addEventListener('submit', async (ev
     };
 
     try {
-        const response = await fetch('http://localhost/itlavka/api/register.php', {
+        const response = await fetch('http://itlavka.free.nf/api/register.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-const API_BASE_URL = 'http://localhost/itlavka/api';
+const API_BASE_URL = 'http://itlavka.free.nf/api';
 
 // Обработчик отправки формы входа
 document.getElementById('loginForm').addEventListener('submit', async (event) => {
@@ -345,7 +345,7 @@ const logoutButton = document.getElementById('logoutButton');
 
 logoutButton.addEventListener('click', async () => {
     try {
-        await fetch('http://localhost/itlavka/api/logout.php', {
+        await fetch('http://itlavka.free.nf/api/logout.php', {
             method: 'POST',
             credentials: 'include'
         });
@@ -612,7 +612,7 @@ document.addEventListener('DOMContentLoaded', () => {
  
 async function checkSession() {
     try {
-        const response = await fetch('http://localhost/itlavka/api/check_session.php', {
+        const response = await fetch('http://itlavka.free.nf/api/check_session.php', {
             method: 'GET',
             credentials: 'include',
             headers: {
@@ -655,7 +655,7 @@ async function addToCart(productId) {
         const productItem = document.querySelector(`.product-button[data-product-id="${productId}"]`).closest('.product-item');
         const productName = productItem.querySelector('.product-text').textContent;
         
-        const response = await fetch('http://localhost/itlavka/api/cart.php', {
+        const response = await fetch('http://itlavka.free.nf/api/cart.php', {
             method: 'POST',
             credentials: 'include',
             headers: {

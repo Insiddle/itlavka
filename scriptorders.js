@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function loadOrders() {
         try {
-            const response = await fetch('http://localhost/itlavka/api/orders.php', {
+            const response = await fetch('http://itlavka.free.nf/api/orders.php', {
                 method: 'GET',
                 credentials: 'include'
             });
@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 async function checkSession() {
     try {
-        const response = await fetch('http://localhost/itlavka/api/check_session.php', {
+        const response = await fetch('http://itlavka.free.nf/api/check_session.php', {
             method: 'GET',
             credentials: 'include',
             headers: {

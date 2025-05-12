@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     profileContent.style.display = 'block';
 
     try {
-        const response = await fetch('http://localhost/itlavka/api/get_profile.php', {
+        const response = await fetch('http://itlavka.free.nf/api/get_profile.php', {
             method: 'GET',
             credentials: 'include'
         });
@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         };
 
         try {
-            const response = await fetch('http://localhost/itlavka/api/update_profile.php', {
+            const response = await fetch('http://itlavka.free.nf/api/update_profile.php', {
                 method: 'POST',
                 credentials: 'include',
                 headers: { 'Content-Type': 'application/json' },
@@ -90,7 +90,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 async function checkSession() {
     try {
-        const response = await fetch('http://localhost/itlavka/api/check_session.php', {
+        const response = await fetch('http://itlavka.free.nf/api/check_session.php', {
             method: 'GET',
             credentials: 'include',
             headers: { 'Content-Type': 'application/json' }

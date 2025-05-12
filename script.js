@@ -88,7 +88,7 @@ document.getElementById('registrationForm').addEventListener('submit', async (ev
     };
 
     try {
-        const response = await fetch('http://localhost/itlavka/api/register.php', {
+        const response = await fetch('http://itlavka.free.nf/api/register.php', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(formData)
@@ -185,7 +185,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-const API_BASE_URL = 'http://localhost/itlavka/api';
+const API_BASE_URL = 'http://itlavka.free.nf/api';
 
 // Обработчик отправки формы входа
 document.getElementById('loginForm').addEventListener('submit', async (event) => {
@@ -242,7 +242,7 @@ const logoutButton = document.getElementById('logoutButton');
 
 logoutButton.addEventListener('click', async () => {
     try {
-        await fetch('http://localhost/itlavka/api/logout.php', {
+        await fetch('http://itlavka.free.nf/api/logout.php', {
             method: 'POST',
             credentials: 'include'
         });
@@ -300,15 +300,27 @@ document.addEventListener('DOMContentLoaded', () => {
         subscriptionForm.addEventListener('submit', async (event) => {
             event.preventDefault();
 
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('subscremail').value;
+
             try {
+                // Отправляем приветственное письмо подписчику
                 await emailjs.send('service_azvtiai', 'template_mihs04l', {
-                    user_name: document.getElementById('name').value,
-                    user_email: document.getElementById('subscremail').value,
+                    user_name: name,
+                    user_email: email
+                });
+
+                // Отправляем себе уведомление о новом подписчике
+                await emailjs.send('service_azvtiai', 'template_xwrbpfj', {
+                    to_email: 'danielrevernt228@gmail.com',
+                    new_subscriber_name: name,
+                    new_subscriber_email: email
                 });
 
                 showMessage('Вы успешно подписались на рассылку!', false);
                 subscriptionForm.reset();
             } catch (error) {
+                console.error('Ошибка при отправке письма:', error);
                 showMessage('Ошибка при отправке письма.', true);
             }
         });
@@ -318,7 +330,6 @@ document.addEventListener('DOMContentLoaded', () => {
         subscriptionMessage.textContent = message;
         subscriptionMessage.classList.toggle('error', isError);
         subscriptionMessage.style.display = 'block';
-
         setTimeout(() => {
             subscriptionMessage.style.display = 'none';
         }, 5000);
@@ -327,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function checkSession() {
     try {
-        const response = await fetch('http://localhost/itlavka/api/check_session.php', {
+        const response = await fetch('http://itlavka.free.nf/api/check_session.php', {
             method: 'GET',
             credentials: 'include',
             headers: {

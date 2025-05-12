@@ -27,7 +27,7 @@ const productImageMap = {
 
 async function checkSession() {
     try {
-        const response = await fetch('http://localhost/itlavka/api/check_session.php', {
+        const response = await fetch('http://itlavka.free.nf/api/check_session.php', {
             method: 'GET',
             credentials: 'include',
             headers: {
@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     async function loadCart() {
         try {
-            const response = await fetch('http://localhost/itlavka/api/cart.php', {
+            const response = await fetch('http://itlavka.free.nf/api/cart.php', {
                 method: 'GET',
                 credentials: 'include'
             });
@@ -110,7 +110,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             const cartItem = e.target.closest('.cart-item');
             const cartId = cartItem.dataset.cartId;
             try {
-                const response = await fetch('http://localhost/itlavka/api/cart.php', {
+                const response = await fetch('http://itlavka.free.nf/api/cart.php', {
                     method: 'DELETE',
                     credentials: 'include',
                     headers: { 'Content-Type': 'application/json' },
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 return;
             }
             try {
-                const response = await fetch('http://localhost/itlavka/api/cart.php', {
+                const response = await fetch('http://itlavka.free.nf/api/cart.php', {
                     method: 'POST',
                     credentials: 'include',
                     headers: { 'Content-Type': 'application/json' },
@@ -160,7 +160,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     checkoutButton.addEventListener('click', async () => {
         try {
-            const response = await fetch('http://localhost/itlavka/api/orders.php', {
+            const response = await fetch('http://itlavka.free.nf/api/orders.php', {
                 method: 'POST',
                 credentials: 'include',
                 headers: { 'Content-Type': 'application/json' }

@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 session_set_cookie_params([
     'lifetime' => 86400,
     'path' => '/',
-    'domain' => '',
+    'domain' => '.free.nf',
     'secure' => false,
     'httponly' => true,
     'samesite' => 'Lax'
@@ -15,8 +15,6 @@ session_set_cookie_params([
 session_start();
 
 $sessionId = session_id();
-
-header("Set-Cookie: PHPSESSID=$sessionId; Path=/; HttpOnly; SameSite=Lax; Partitioned");
 
 header("Access-Control-Allow-Origin: http://itlavka.free.nf");
 header("Access-Control-Allow-Credentials: true");
@@ -34,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
     exit;
 }
 
-require_once 'db.php';
+require_once __DIR__ . '/db.php';
 
 $data = json_decode(file_get_contents('php://input'), true);
 error_log('Login request data: ' . print_r($data, true));
